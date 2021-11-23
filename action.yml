@@ -1,0 +1,29 @@
+name: 'CircleCI API V2'
+description: 'CircleCI V2 API pipeline trigger with parameters.'
+inputs:
+  token:
+    description: 'CircleCI Token'
+    required: true
+    default: null
+  org:
+    description: 'Organization name, defaults to current Github organization name.'
+    required: true
+    default: null
+  repo:
+    description: 'Repository name, defaults to current Github repository name.'
+    required: false
+  branch:
+    description: 'Branch name, defaults to current Github branch name.'
+    required: false
+  tag: 
+    description: 'Tag name'
+    required: false
+  parameters: 
+    description: 'Pipeline parameters being passed to CircleCI'
+    required: false
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'node16'
+  main: 'index.js'
