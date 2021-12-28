@@ -1,5 +1,6 @@
 name: 'CircleCI API V2'
 description: 'CircleCI V2 API pipeline trigger with parameters.'
+author: 'Jason Comes & Nabhas Alakkat'
 inputs:
   token:
     description: 'CircleCI Token'
@@ -25,5 +26,5 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: 'node12'
+  main: 'dist/index.js'

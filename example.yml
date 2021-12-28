@@ -1,0 +1,33 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: circleci-api-v2@v1.1
+        with:
+          request: pipeline/post
+          branch: ...
+          tag: ...
+          parameter:
+            - name:
+              value: 
+
+      - name: Hello world action step
+        id: hello
+        uses: circleci-api-v2@v1.1
+        with:
+          request: pipeline/get
+          body: 
+            branch: 'feature/design-new-api'
+            tag: 'v3.1.4159'
+            parameters:
+              deploy_prod: true
+          headers:
+            'content-type': 'application/json';
+            'x-attribution-login': 'SOME_STRING_VALUE';
+            'x-attribution-actor-id': 'SOME_STRING_VALUE';
+            authorization: 'Basic REPLACE_BASIC_AUTH';
